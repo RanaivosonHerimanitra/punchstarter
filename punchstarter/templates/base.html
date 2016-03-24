@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+
+ <meta charset="utf-8" >
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <link rel="canonical" href="http://themes.getbootstrap.com/products/dashboard" />
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" >
+ <link rel="stylesheet" href="/static/theme.css" >
+ <title>Punchstarter | {% block subtitle %} {% endblock %}</title>
+</head>
+
+<body id="dashboard" class="background-dark template-product" >
+
+<nav class="navbar navbar-default navbar-fixed-top swag-line swag-line-top" role="navigation">
+  <div class="navbar-header">
+    <a class="navbar-brand">Punchstarter</a>
+  </div>
+  <ul class="nav navbar-nav">
+
+    <li {% if active_page=='index' %} class="active" {% endif %}>
+      <a href="/">Home</a>
+    </li>
+
+    <li {% if active_page=='create' %} class="active" {% endif %}>
+      <a href="{{url_for('create')}}">Create a project</a>
+    </li>
+
+    <li {% if active_page=='viz' %} class="active" {% endif %}>
+      <a href="{{url_for('viz')}}">Visualize</a>
+    </li>
+
+    
+
+  </ul>
+</nav>
+
+
+<div class="container theme-showcase" role="main">
+  {% block content %}
+  {% endblock content %}
+  <hr>
+  <footer>
+    <p>&Copy; Punchstarter, 2016</p>
+  </footer>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript">
+</script>
+<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+
+</body>
+</html>

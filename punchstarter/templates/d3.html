@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% set active_page ="viz" %}
+
+{% block subtitle %}
+  Neat visualization
+{% endblock %}
+
+{% block content %}
+<br><br><br>
+ <div class="row">
+ 	<div class="col-sm-12">
+ 		<h1 class="text-center">Some cool visualization with d3</h1>
+ 		<div class="text-center">coming soon...</div>
+ 		<ul>
+ 			<li>One</li>
+ 			<li>Two</li>
+ 			<li>Three</li>
+ 		</ul>
+ 		<p class="fancy-graph">Evening gown required</p>
+ 		<p class="fancy-graph" style="color:red;">Tuxedo required</p>
+ 		<span style="color:red;">Bridge</span>
+ 		<span id="wide-span">Brooklyn bridge</span>
+ 		<div class="outer-div">Outer
+ 			<div class="inner-div">Inner
+ 			</div>
+ 		</div>
+ 		<div class="svg_by_hand">
+ 			<svg width="50" height="50">
+ 				<circle cx="25" cy="25" r="25" fill="purple"></circle>
+ 			</svg>
+ 		</div>
+ 	</div>
+ </div>
+{% endblock %}

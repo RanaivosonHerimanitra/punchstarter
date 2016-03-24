@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% set active_page ="create" %}
+
+{% block content %}
+
+{% block subtitle %}
+  Create an awesome project
+{% endblock %}
+
+<!--<nav class="navbar navbar-default navbar-fixed-top swag-line swag-line-top" role="navigation">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="/">Punchstarter</a>
+  </div>
+  <ul class="nav navbar-nav">
+    <li><a href="">Create a project</a></li>
+  </ul>
+</nav>-->
+
+
+<div class="container theme-showcase" role="main">
+ <br><br><br><br>
+    <div>
+     <h2 class="text-center">Create a project</h2>
+    </div>
+  <form class="form-horizontal" method="POST" action="{{ url_for('create') }}">
+
+    <div class="form-group">
+      <label for="project_name">Project name</label>
+      <input type="text" class="form-control" id="project_name" name="project_name">
+    </div>
+
+    <div class="form-group">
+      <label for="short_description">Short description</label>
+      <textarea rows="5" class="form-control" name="short_description" id="short_description">
+      </textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="long_description">Long description</label>
+      <textarea rows="15" class="form-control" name="long_description" id="long_description">
+      </textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="funding_goal">Funding goal (in $ )</label>
+      <input type="number" id="funding_goal" name="funding_goal">
+    </div>
+
+    <div class="form-group">
+      <label for="funding_end_date">Funding End Date</label>
+      <input type="date" name="funding_end_date" id="funding_end_date">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button> 
+</form>
+</div>
+
+{% endblock content %}
+
