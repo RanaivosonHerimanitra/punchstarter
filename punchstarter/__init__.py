@@ -25,26 +25,26 @@ def create():
 	if request.method=="GET":
 		return render_template("create.html")
 
-	# if request.method=="POST":
-	# 	now = datetime.datetime.now()
-	# 	time_end= request.form.get("funding_end_date")
- #        time_end= datetime.datetime.strptime(time_end,"%Y-%m-%d")
-	# 	new_project = Project(
-	# 		member_id = 1,
-	# 		name = request.form.get("project_name"),
-	# 		short_description = request.form.get("short_description"),
-	# 		long_description = request.form.get("long_description"),
-	# 		goal_amount = request.form.get("funding_goal"),
-	# 		time_start = now,
-	# 		time_end = time_end,
-	# 		time_created = now
-	# 		)
-	# 	db.session.add(new_project)
-	# 	db.session.commit()
-	# 	return redirect(url_for('create'))
+	if request.method=="POST":
+		now = datetime.datetime.now()
+		time_end= request.form.get("funding_end_date")
+		time_end= datetime.datetime.strptime(time_end,"%Y-%m-%d")
+		new_project = Project(
+			member_id = 1,
+			name = request.form.get("project_name"),
+			short_description = request.form.get("short_description"),
+			long_description = request.form.get("long_description"),
+			goal_amount = request.form.get("funding_goal"),
+			time_start = now,
+			time_end = time_end,
+			time_created = now
+			)
+		db.session.add(new_project)
+		db.session.commit()
+		return redirect(url_for('create'))
 
 
-@app.route("/visualization/d3")
+@app.route("/visualization/d3/")
 def viz():
 	return render_template("d3.html")
 
