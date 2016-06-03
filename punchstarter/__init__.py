@@ -3,7 +3,7 @@ from flask import Flask, render_template,request,redirect,url_for,abort
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.migrate import Migrate, MigrateCommand
 from flask.ext.script import Manager
-import datetime 
+import datetime
 app = Flask(__name__)
 app.config.from_object('punchstarter.default_settings')
 manager=Manager(app)
@@ -13,7 +13,7 @@ db= SQLAlchemy(app)
 migrate=Migrate(app,db)
 manager.add_command('db',MigrateCommand)
 
-from punchstarter.models import * 
+from punchstarter.models import *
 
 @app.route("/")
 def hello():
@@ -67,7 +67,7 @@ def pledge(project_id):
 	if request.method=="POST":
 		guest_pledgor = db.session.query(Member).filter_by(id=2).one()
 		#handle the form submission:
-		new_pledge =Pledge (member_id=quest_pledgor.id,project_id=project.id,amount=request.form.get("amount"),time_created=datetime.datetime.now())
+		new_pledge =Pledge (member_id=guest_pledgor.id,project_id=project.id,amount=request.form.get("amount"),time_created=datetime.datetime.now())
 		#actual insertion into the database (db)
 		db.session.add(new_pledge)
 		db.session.commit()
